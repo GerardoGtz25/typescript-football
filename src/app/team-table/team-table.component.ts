@@ -1,14 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { TeamService, TeamsTableHeaders } from "../services/team.service";
-import { Observable } from "rxjs";
-import { take } from "rxjs/operators";
-import { Team } from "../interfaces/team";
-import { Countries } from "../interfaces/player";
+import { Component, OnInit } from '@angular/core';
+import { TeamService, TeamsTableHeaders } from '../services/team.service';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
+import { Team } from '../interfaces/team';
+import { Countries } from '../interfaces/player';
 
 @Component({
-  selector: "app-team-table",
-  templateUrl: "./team-table.component.html",
-  styleUrls: ["./team-table.component.sass"]
+  selector: 'app-team-table',
+  templateUrl: './team-table.component.html',
+  styleUrls: ['./team-table.component.sass']
 })
 export class TeamTableComponent implements OnInit {
   public teams$: Observable<Team[]>;
@@ -23,7 +23,7 @@ export class TeamTableComponent implements OnInit {
       .subscribe(teams => {
         if (teams.length === 0) {
           const team: Team = {
-            name: "MyAmazingTeam",
+            name: 'MyAmazingTeam',
             country: Countries.Mexico,
             players: null
           };
